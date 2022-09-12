@@ -1,15 +1,15 @@
 const addBookButton = document.querySelector("#add-book-button");
 addBookButton.addEventListener("click", showBookForm);
 
-function showBookForm() {
-  const bookForm = document.querySelector("#book-form");
-  bookForm.removeAttribute("hidden");
-}
-
 const submitBookButton = document.querySelector("#submit-book");
-submitBookButton.addEventListener("click", hideBookForm);
+submitBookButton.addEventListener("click", showBookForm);
 
-function hideBookForm() {
+function showBookForm(event) {
   const bookForm = document.querySelector("#book-form");
-  bookForm.setAttribute("hidden", true);
+  let hide;
+  if (event.target.id === "add-book-button") {
+    bookForm.removeAttribute("hidden");
+  } else {
+    bookForm.setAttribute("hidden", true);
+  }
 }

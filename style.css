@@ -2,17 +2,21 @@
   display: grid;
 }
 
-.col-auto-fil {
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+.col-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+#book-grid {
+  gap: 2rem;
 }
 
 .book-card {
   border-radius: 10px;
   border-style: solid;
   border-width: 1px;
-  width: 150px;
-  height: 200px;
-  padding: 2rem 1rem;
+  max-width: 200px;
+  padding: 2rem;
+  margin: 1rem;
 }
 .book-card:hover {
   transform: scale(1.1);
