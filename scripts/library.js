@@ -14,6 +14,7 @@ Book.prototype.toBookCard = function () {
 
 function addBookToLibrary(book) {
   library.push(book);
+  displayBooks();
 }
 
 function displayBooks() {

@@ -10,14 +10,14 @@
     <div>
       <button id="add-book-button">Add Book</button>
     </div>
-    <div id="book-form" hidden>
-      <form>
+    <div id="book-form" hidden="true">
+      <form id="book-info">
         <div>
-          <label for="book-name">Book Name:</label>
+          <label for="book-title">Book Title:</label>
           <input
             type="text"
-            name="book-name"
-            id="book-name"
+            name="book-title"
+            id="book-title"
             placeholder="The Lord of the Rings"
             required
           />
@@ -48,19 +48,13 @@
         <div>
           <p>Have you read it?</p>
           <label for="read">Yes</label>
-          <input
-            type="radio"
-            name="read-yet"
-            id="read"
-            value="false"
-            required
-          />
+          <input type="radio" name="read-yet" id="read" value="true" required />
           <label for="not-read">No</label>
           <input
             type="radio"
             name="read-yet"
-            id="read-yet"
-            value="true"
+            id="not-read"
+            value="false"
             required
           />
         </div>
@@ -80,5 +74,4 @@
     </div>
   </body>
   <script src="./scripts/script.js"></script>
-  <script src="./scripts/library.js"></script>
 </html>

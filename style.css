@@ -27,3 +27,14 @@
   width: max(640px, 80vw);
   margin: auto;
 }
+
+#book-form {
+  max-width: 720px;
+  position: absolute;
+  margin: auto;
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 1px;
+  padding: 1rem;
+  background-color: lightgray;
+}
