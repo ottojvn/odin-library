@@ -60,14 +60,7 @@ function createBookCard(book, id) {
   return bookCard;
 }
 
-const lotr = new Book("LOTR 1", "JRR Tolkien", 123, true);
-const lotr2 = new Book("LOTR 2", "JRR Tolkien", 231, false);
-const lotr3 = new Book("LOTR 3", "JRR Tolkien", 332, false);
-
 let library = [];
-addBookToLibrary(lotr);
-addBookToLibrary(lotr2);
-addBookToLibrary(lotr3);
 
 const addBookButton = document.querySelector("#add-book-button");
 addBookButton.addEventListener("click", toggleBookForm);
