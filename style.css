@@ -38,3 +38,9 @@
   padding: 1rem;
   background-color: lightgray;
 }
+
+.delete-button:hover {
+  background-color: lightgray;
+  border-radius: 10px;
+  transform: scale(1.1);
+}

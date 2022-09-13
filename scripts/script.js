@@ -30,11 +30,44 @@ function createBookCard(book, id) {
   const bookCard = document.createElement("div");
   bookCard.innerHTML = book.toBookCard();
   bookCard.classList.add("book-card");
-  bookCard.id = "book-${id}";
+  bookCard.data = "${id}";
+
+  const bookCardButtons = document.createElement("div");
+  bookCard.appendChild(bookCardButtons);
+  const toggleButton = document.createElement("img");
+  toggleButton.classList.add("book-button");
+  let imgsrc = book.read
+    ? "./icons/toggle-switch.png"
+    : "./icons/toggle-switch-off.png";
+  toggleButton.setAttribute("src", imgsrc);
+  toggleButton.addEventListener("click", function () {
+    book.read = !book.read;
+    displayBooks();
+  });
+  bookCardButtons.appendChild(toggleButton);
+
+  const deleteButton = document.createElement("img");
+  deleteButton.setAttribute("src", "./icons/delete.png");
+  bookCardButtons.appendChild(deleteButton);
+  deleteButton.classList.add("book-button");
+  deleteButton.addEventListener("click", function () {
+    library = library
+      .slice(0, id)
+      .concat(library.slice(id + 1, library.length));
+    displayBooks();
+  });
+
   return bookCard;
 }
 
+const lotr = new Book("LOTR 1", "JRR Tolkien", 123, true);
+const lotr2 = new Book("LOTR 2", "JRR Tolkien", 231, false);
+const lotr3 = new Book("LOTR 3", "JRR Tolkien", 332, false);
+
 let library = [];
+addBookToLibrary(lotr);
+addBookToLibrary(lotr2);
+addBookToLibrary(lotr3);
 
 const addBookButton = document.querySelector("#add-book-button");
 addBookButton.addEventListener("click", toggleBookForm);
